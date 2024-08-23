@@ -547,23 +547,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 </script>
 <script src="https://scripts.clickbank.net/hop.min.js" defer></script>    </footer>
-   <!-- Script para alterar os valores dinâmicos -->
-<script>
-    // Substituir o número de dias de 30 para 60
-    document.querySelector('span[parameter="days"]').textContent = '60';
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Substituir o número de dias de 30 para 60
+        var daysElement = document.querySelector('span[parameter="days"]');
+        if (daysElement) {
+            daysElement.textContent = '60';
+        }
 
-    // Substituir o preço de $69 para $79
-    var initialPriceElement = document.querySelector('span[parameter="initial_price"]');
-    var priceElement = document.querySelector('span[parameter="price"]');
+        // Substituir o preço de $69 para $79
+        var initialPriceElement = document.querySelector('span[parameter="initial_price"]');
+        var priceElement = document.querySelector('span[parameter="price"]');
 
-    if (initialPriceElement) {
-        initialPriceElement.textContent = '99'; // Mantém o preço riscado em $99
-    }
+        if (initialPriceElement) {
+            initialPriceElement.textContent = '99'; // Mantém o preço riscado em $99
+        }
 
-    if (priceElement) {
-        priceElement.textContent = '79'; // Novo preço $79
-    }
+        if (priceElement) {
+            priceElement.textContent = '79'; // Novo preço $79
+        }
+    });
 </script>
+
 	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
